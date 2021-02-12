@@ -1,24 +1,44 @@
-# MultiSelect
+# fbro-multiselect
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project multiselect` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project multi-select`.
-> Note: Don't forget to add `--project multiselect` or else it will be added to the default project in your `angular.json` file. 
+```
+npm i fbro-multiselect
+```
 
-## Build
+## Usage
 
-Run `ng build multiselect` to build the project. The build artifacts will be stored in the `dist/` directory.
+```ts
+import {MultiselectModule} from "fbro-multiselect";
 
-## Publishing
+@NgModule({
+    ...
+    imports: [BrowserModule, MultiselectModule]
+    ...
+})
+class MainModule { }
+```
 
-After building your library with `ng build multiselect`, go to the dist folder `cd dist/multi-select` and run `npm publish`.
+```html
+<multiselect
+  [options]="options"
+  [filter]="true"
+  filterBy="label"
+  optionLabel="label"
+  optionValue="value"
+  (onChange)="selectedValues($event)"></multiselect>
+</select2>
+```
 
-## Running unit tests
+### properties and events
 
-Run `ng test multiselect` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+name | type | default | description | example
+--- | --- | --- | --- | ---
+options | `{}[]` array of objects | [] | Options on the dropdown | `options: {}[] = [{label:'option1', value:'one'}, ...]`
+filter | boolean | false | Enable search options | `[filter]="true"`
+filterBy | string | label | Object properties for search. add more properties seperated by comma (,) | `filterBy="label,value,customProp"`
+optionLabel | string | label | text to show at dropdown option | `optionLabel="customProp"`
+optionValue | string | value | value of the given label | `optionValue="customPropVal"`
+onChange | method | | emmit event on change when add/remove value | `(onChange)="printTheChange($event)"`
