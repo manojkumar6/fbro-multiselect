@@ -42,3 +42,9 @@ filterBy | string | label | Object properties for search. add more properties se
 optionLabel | string | label | text to show at dropdown option | `optionLabel="customProp"`
 optionValue | string | value | value of the given label | `optionValue="customPropVal"`
 onChange | method | | emmit event on change when add/remove value | `(onChange)="printTheChange($event)"`
+
+### Features
++ close dropdown on press Escape(`Esc`) key
++ close dropdown on outclick
++ move/highlight option by using up and down keys
++ press space key to select/deselect the highlighted option
