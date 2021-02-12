@@ -1,6 +1,9 @@
 {
   "name": "fbro-multiselect",
-  "version": "0.0.3",
+  "version": "0.0.4",
+  "repository": {
+    "url": "https://github.com/manojkumar6/fbro-multiselect/tree/master/projects/multiselect"
+  },
   "peerDependencies": {
     "@angular/common": "^9.0.7",
     "@angular/core": "^9.0.7",
